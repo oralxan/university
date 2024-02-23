@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'faculty',
     'rest_framework',
     'api',
-    'django-cleanup'
+    'django_cleanup'
     
 ]
 REST_FRAMEWORK ={
