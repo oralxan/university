@@ -14,13 +14,13 @@ from .views import(
 urlpatterns = [
     path('tuition-lan/', Tuition_languageSerializerList.as_view(),name='tut'),
     path('tuition-lan/<int:pk>/',Tuition_languageSerializerDetail.as_view()),
-    path('Edulist/', Education_formSerList.as_view(),name='edulist'),
-    path('Edudetail/<int:pk>/',Education_formDetail.as_view()),
-    path('sublist/',SubjectSerList.as_view(), name='sublist'),
-    path('subdetail/<int:pk>/',SubjectSerDetail.as_view()),
-    path('facultylist/',FacultySerializerList.as_view()),
-    path('facultydetail/<int:pk>/',FacultySerializerDetail.as_view()),
+    path('Edu/', Education_formSerList.as_view(),name='edulist'),
+    path('Edu/<int:pk>/',Education_formDetail.as_view()),
+    path('sub/',SubjectSerList.as_view(), name='sublist'),
+    path('sub/<int:pk>/',SubjectSerDetail.as_view()),
+    path('faculty/',FacultySerializerList.as_view()),
+    path('faculty/<int:pk>/',FacultySerializerDetail.as_view()),
     path('univer/',UniversitySerList.as_view(),name='univer'),
-    path('univerdetail/<int:pk>/',UniversityDetail.as_view())
+    path('univer/<int:pk>/',UniversityDetail.as_view())
 
 ]

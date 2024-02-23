@@ -23,7 +23,7 @@ from universities.models import University
 class Tuition_languageSerializerList(APIView):
     def get(self,request,format=None):
         queryset = Tuition_language.objects.all()
-        serializer = Tuition_languageSerializer(queryset,many= True)
+        serializer = Tuition_languageSerializer(queryset,many= True,context = {'request': request})
         return Response(
             serializer.data,
             status = HTTP_200_OK
@@ -99,7 +99,7 @@ class Tuition_languageSerializerDetail(APIView):
 class Education_formSerList(APIView):
     def get(self,request,format=None):
         queryset = Education_form.objects.all()
-        serializer = Education_formSer(queryset,many= True)
+        serializer = Education_formSer(queryset,many= True,context = {'request': request})
         return Response(
             serializer.data,
             status = HTTP_200_OK
@@ -171,7 +171,7 @@ class Education_formDetail(APIView):
 class SubjectSerList(APIView):
     def get(self,request,format=None):
         queryset = Subject.objects.all()
-        serializer = SubjectSer(queryset,many= True)
+        serializer = SubjectSer(queryset,many= True,context = {'request': request})
         return Response(
             serializer.data,
             status = HTTP_200_OK
@@ -243,7 +243,7 @@ class SubjectSerDetail(APIView):
 class FacultySerializerList(APIView):
     def get(self,request,format=None):
         queryset = Faculty.objects.all()
-        serializer = FacultySerializer(queryset,many= True)
+        serializer = FacultySerializer(queryset,many= True, context = {'request': request})
         return Response(
             serializer.data,
             status = HTTP_200_OK
@@ -317,9 +317,10 @@ class FacultySerializerDetail(APIView):
 
 #University#
 class UniversitySerList(APIView):
+
     def get(self,request,format=None):
         queryset = University.objects.all()
-        serializer = UniversitySer(queryset,many= True)
+        serializer = UniversitySer(queryset,many= True, context = {'request': request})
         return Response(
             serializer.data,
             status = HTTP_200_OK
